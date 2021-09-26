@@ -197,7 +197,7 @@ export default function Result ({ resultados, estado }) {
                     <div className="bg-background-dark rounded-xl flex-1 p-5">TESTE</div>
                 </div>
                 <div className="bg-background-dark rounded-xl flex-1 p-5">
-TESTE
+                    TESTE
                 </div>
             </div>
         </Container>
