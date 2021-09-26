@@ -2,11 +2,10 @@ import dotenv from 'dotenv'
 dotenv.config({ path: '.env.local' })
 // Import the Google Cloud client library using default credentials
 
-const {BigQuery} = require('@google-cloud/bigquery');
-const bigquery = new BigQuery();
 export default async function query() {
   // Queries the U.S. given names dataset for the state of Texas.
-
+  const {BigQuery} = require('@google-cloud/bigquery');
+  const bigquery = new BigQuery();
   const query = `SELECT emit_id FROM \`arquivei-hackathon.main.sample_dw_nfe\` where dest_id = '35489633' LIMIT 100`;
 
   // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query

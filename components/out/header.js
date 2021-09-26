@@ -2,7 +2,7 @@ import Image from "next/image"
 import Logo from "/public/logos/logobusinessspot_full _combranco.svg"
 import Link from "next/link"
 
-export default function Header() {
+export default function Header({}) {
     return (
         <div className="w-full flex justify-between items-center">
             <div className="w-1/3">

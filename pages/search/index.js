@@ -1,11 +1,10 @@
 import Container from "../../components/global/container"
 import Head from 'next/head'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import Link from "next/link"
+import { Estados } from "../../utils/estados"
 
 export default function Index () {
-    const ESTADOS = ["Acre","Alagoas","Amapá","Amazonas","Bahia","Ceará","Distrito Federal","Espírito Santo","Goiás","Maranhão","Mato Grosso","Mato Grosso do Sul","Minas Gerais","Pará","Paraíba","Paraná","Pernambuco","Piauí","Rio de Janeiro","Rio Grande do Norte","Rio Grande do Sul","Rondônia","Roraima","Santa Catarina","São Paulo","Sergipe","Tocantins"]
     const [SETORES, setSETORES] = useState([])
     const [DIVISOES, setDIVISOES] = useState([])
     const [GRUPOS, setGRUPOS] = useState([])
@@ -20,8 +19,6 @@ export default function Index () {
     function capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     }
-
-    console.log(CLASSE)
 
     useEffect(() => {
     fetch("https:servicodados.ibge.gov.br/api/v2/cnae/secoes")
@@ -66,6 +63,7 @@ export default function Index () {
           setCLASSES(data)
         })  
     }
+    console.log(ESTADO)
 
     return (
         <>
@@ -74,7 +72,7 @@ export default function Index () {
         </Head>
         <Container>
             <div>
-                <div className="font-title text-3xl pb-1 pt-10">
+                <div className="font-title text-3xl pb-1 pt-5">
                     Vamos encontrar seu setor
                 </div>
                 <div className="font-light pb-4 ml-1 text-lg">
@@ -84,9 +82,9 @@ export default function Index () {
 
                 <select className="select-field" onChange={(e) => {setESTADO(e.target.value)}}>
                 <option selected disabled>Estado</option>
-                {ESTADOS.map((el) => {
+                {Estados.map((el) => {
                     return (
-                    <option value={el} key={el}>{el}</option>
+                    <option value={el.key} key={el.key}>{el.value}</option>
                     )
                 })}
                 </select>
@@ -127,7 +125,7 @@ export default function Index () {
                     })}
                 </select>
                 </div>
-                <Link passHref href={{pathname: "/search/result", query: {class: CLASSE ? CLASSE.id : "error"}}}>
+                <Link passHref href={{pathname: "/search/result", query: {class: (CLASSE ? CLASSE.id : "error"), state: (ESTADO ? ESTADO : "error")}}}>
                 <button className="w-full bg-primary hover:bg-primary-dark rounded-xl text-center py-1.5 px-10 transition-all mt-5">
                     Buscar esse setor
                 </button>

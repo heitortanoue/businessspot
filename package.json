@@ -6,8 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@google-cloud/bigquery": "^5.9.0",
     "@nivo/bar": "^0.73.1",
     "@nivo/core": "^0.73.0",
+    "@nivo/line": "^0.73.0",
+    "@nivo/pie": "^0.73.0",
+    "axios": "^0.21.4",
     "dotenv": "^10.0.0",
     "next": "latest",
     "nprogress": "^0.2.0",

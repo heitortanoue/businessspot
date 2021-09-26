@@ -10,6 +10,7 @@ module.exports = {
       },
       "secondary": "var(--secondary)",
       "background": {
+        lighter: "var(--lighter-background)",
         light: "var(--light-background)",
         DEFAULT: "var(--def-background)",
         dark: "var(--dark-background)"

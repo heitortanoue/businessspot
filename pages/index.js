@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import Container from '../components/global/container'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
 import Link from "next/link"
 
 export default function Home() {
   const GROWTH_CONST = 2
-
   return (
     <>
     <Head>

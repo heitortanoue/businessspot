@@ -1,10 +1,10 @@
 import Header from "../out/header";
 
-export default function Container ({ children }) {
+export default function Container ({ children, hideHeader }) {
     return (
-        <div className="flex w-full">
+        <div className="h-screen overflow-auto">
             <div className="pt-8 container mx-auto">
-                <Header/>
+                {!hideHeader ? <Header/> : null}
                 <div className="py-12">
                     { children }
                 </div>

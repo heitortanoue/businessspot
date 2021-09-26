@@ -5,6 +5,7 @@
 :root {
     --def-background: #1D1E42;
     --light-background: #37376A;
+    --lighter-background: #9a9abe;
     --dark-background: #141432;
     --primary: #524FED;
     --dark-primary: #3c3ac2;
@@ -42,4 +43,8 @@
     padding-left: 2rem;
     color: #FFFFFF;
     outline: none;
+}
+
+.h-150 {
+    height: 30rem;
 }
