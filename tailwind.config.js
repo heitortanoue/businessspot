@@ -3,7 +3,23 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    colors: {
+      "primary": {
+        DEFAULT: "var(--primary)",
+        dark: "var(--dark-primary)"
+      },
+      "secondary": "var(--secondary)",
+      "background": {
+        light: "var(--light-background)",
+        DEFAULT: "var(--def-background)",
+        dark: "var(--dark-background)"
+      },
+      "white": "#FFFFFF",
+    },
+    fontFamily: {
+      'body': ['"Source Sans Pro"'],
+      'title': ['"Trocchi"']
+    },
   },
   variants: {
     extend: {},

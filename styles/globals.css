@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --def-background: #1D1E42;
+    --light-background: #37376A;
+    --dark-background: #141432;
+    --primary: #524FED;
+    --dark-primary: #3c3ac2;
+    --secondary: #70CF98;
+}
+
+.background-gradient {
+    background: var(--def-background);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#39396D), color-stop(100%,var(--def-background)));
+    background: -webkit-linear-gradient(top,  #39396D 0%, var(--def-background) 100%);
+    background:    -moz-linear-gradient(top,  #39396D 0%, var(--def-background) 100%);
+    background:     -ms-linear-gradient(top,  #39396D 0%, var(--def-background) 100%);
+    background:      -o-linear-gradient(top,  #39396D 0%, var(--def-background) 100%);
+    background:         linear-gradient(to bottom, #39396D 0%, var(--def-background) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#39396D', endColorstr='#1D1E42',GradientType=0 );
+    background-attachment: fixed;  
+}
+
+.text-size-title {
+    font-size: 52px;
+    line-height: 68px;
+}
+
+.select-field {
+    border-radius: 9999px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: var(--dark-background);
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    padding: .8rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    color: #FFFFFF;
+    outline: none;
+}
